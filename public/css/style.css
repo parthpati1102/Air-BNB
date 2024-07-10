@@ -54,6 +54,10 @@
     align-items: space-evenly;
 }
 
+.index{
+    margin-top: 12.9rem !important;
+}
+
 /* cards */
 
 .listing-card{
