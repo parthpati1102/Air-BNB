@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
 const initdata = require("../init/data.js");
 const listing = require("../models/listing.js")
-const review = require("../models/review.js")
+const review = require("../models/review.js");
+const { isUnionTypeNode } = require("typescript");
 
 const MONGO_PASSWORD = encodeURIComponent('parth@123');
 const MONGO_URL = `mongodb+srv://parthpatidar11022004:${MONGO_PASSWORD}@cluster0.228w6mw.mongodb.net/MajorProject?retryWrites=true&w=majority&appName=Cluster0`;
@@ -22,6 +23,7 @@ async function main() {
 
 const initDB = async () => {
     await listing.deleteMany({});
+    initdata.data = initdata.data.map((obj) => ({ ...obj , owner : "66890a618da298e004834ed2"}));
     await listing.insertMany(initdata.data);
     console.log("Data is Initialized");
 
