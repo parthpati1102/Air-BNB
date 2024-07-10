@@ -130,4 +130,3 @@ app.use((err, req, res, next) => {
     //    res.status(StatusCode).send(message);
     res.status(StatusCode).render("error.ejs", { message });
 })
-
